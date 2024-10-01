@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 
 function Navbar() {
   return (
-    <div className='flex border space-x-5 text-base p-2	 font-bold'>
+    <div className='flex border space-x-5 text-base p-2	 font-bold text-white bg-black border-black'>
         
         <FontAwesomeIcon icon={faClapperboard} className='mt-1' />
         <Link to="/">Home</Link>

@@ -8,6 +8,7 @@ import {BrowserRouter,Routes,Route} from 'react-router-dom'
 import Banner from './components/Banner'
 
 
+
 function App() {
   
 
@@ -21,7 +22,7 @@ function App() {
 <Route path='/' element={  
   <>
   <Banner></Banner>
-  <Movies></Movies>
+<Movies></Movies>
   </>
   
  } ></Route>

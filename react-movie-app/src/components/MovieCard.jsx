@@ -1,9 +1,18 @@
+
 // eslint-disable-next-line no-unused-vars
 import React from 'react'
 
-function MovieCard() {
+// eslint-disable-next-line react/prop-types
+function MovieCard({poster_path , original_title}) {
   return (
-   <div style={{backgroundImage:'url(https://images-cdn.ubuy.co.in/634d0a48023cd2292277f3df-avengers-endgame-marvel-studios-framed.jpg)'}} className='h-[40vh] w-[200px] bg-center bg-cover rounded-xl hover:cursor-pointer hover:scale-110 duration-300'></div>
+   
+   <div  className='h-[40vh] w-[180px] bg-center bg-cover  hover:cursor-pointer hover:scale-110 duration-300 ' style={{backgroundImage:`url(https://image.tmdb.org/t/p/original/${poster_path})`}}>
+      
+      <div className='bg-black text-center text-xl w-full text-white opacity-70 '>{original_title}</div>
+   
+   </div>
+ 
+
   )
 }
 
