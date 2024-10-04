@@ -4,7 +4,8 @@ import MovieCard from './MovieCard'
 import axios from 'axios'
 import Pagination from './Pagination'
 
-function Movies() {
+// eslint-disable-next-line react/prop-types, no-unused-vars
+function Movies({handleWatchList , movieObj , watchList, handleFilteredWatchList}) {
 
   const [movies ,setMovies]=useState([])
   const [pageNo ,setpageNo]=useState(1)
@@ -46,8 +47,8 @@ function Movies() {
         {movies.map((movieObj)=>
         {
           
-          // eslint-disable-next-line react/jsx-key
-          return <MovieCard poster_path={movieObj.poster_path} original_title={movieObj.original_title}/>
+          // eslint-disable-next-line react/jsx-key, react/prop-types
+          return <MovieCard key={movieObj.id} watchList={watchList} poster_path={movieObj.poster_path} handleWatchList={handleWatchList} movieObj={movieObj} original_title={movieObj.original_title} handleFilteredWatchList={handleFilteredWatchList}/>
         })
         }
       

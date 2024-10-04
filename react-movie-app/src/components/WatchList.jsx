@@ -1,15 +1,19 @@
 // eslint-disable-next-line no-unused-vars
-import React from 'react'
+import React, { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
 
+
 function WatchList() {
+ 
+
   return (
     <>
-    <div className='flex justify-center flex-wrap '>
+    <div className='flex justify-center flex-wrap gap-2'>
     <div className='text-center text-white bg-black w-[6rem] rounded mt-2 p-2 font-bold hover:bg-gray-400 hover:text-black'>
       Action
     </div>
+   
     </div>
   
     <div className='flex justify-center mt-5 mb-5'>
