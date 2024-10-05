@@ -1,11 +1,20 @@
+/* eslint-disable react/prop-types */
 // eslint-disable-next-line no-unused-vars
 import React, { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
 
 
-function WatchList() {
- 
+function WatchList({watchList}) {
+
+ console.log(watchList)
+
+ const [searchKey , setSearch]=useState('')
+
+ const handleSearch = (e)=>
+ {
+    setSearch(e.target.value)
+ }
 
   return (
     <>
@@ -17,7 +26,7 @@ function WatchList() {
     </div>
   
     <div className='flex justify-center mt-5 mb-5'>
-      <input type='text' placeholder='🔍Search Movie' className='h-[2rem] w-[15rem] p-3 rounded bg-gray-200 text-black'></input>
+      <input type='text' onChange={handleSearch} value={searchKey} placeholder='🔍Search Movie' className='h-[2rem] w-[15rem] p-3 rounded bg-gray-200 text-black'></input>
     </div>
     
     
@@ -42,25 +51,36 @@ function WatchList() {
 
       </thead>
       <tbody> 
-        <tr>
-          <td className='p-3 flex items-center gap-6' >
-            <img src="https://rukminim2.flixcart.com/image/750/900/jf8khow0/poster/a/u/h/small-hollywood-movie-poster-blade-runner-2049-ridley-scott-original-imaf3qvx88xenydd.jpeg?q=20&crop=false" alt="" className='h-[8rem] w-[6rem]' />
-            <div>Blade Runner</div>
-          </td>
-          <td>
-            9.7
-          </td>
-          <td>
-            9
-          </td>
-          <td>
-            Action
-          </td>
 
-          <td className>
-          <FontAwesomeIcon icon={faTrash} />
-          </td>
-        </tr>
+      {watchList.filter((movieObj)=>
+      {
+        return movieObj.title.toLowerCase().includes(searchKey.toLocaleLowerCase())
+      }).map((movieObj)=>
+      {
+     
+       // eslint-disable-next-line react/jsx-key
+       return  <tr>
+        <td className='p-3 flex items-center gap-6' >
+          <img src={`https://image.tmdb.org/t/p/original/${movieObj.poster_path}`} alt="movie-poster" className='h-[8rem] w-[6rem]' />
+          <div>{movieObj.original_title}</div>
+        </td>
+        <td>
+          {movieObj.vote_average}
+        </td>
+        <td>
+          {movieObj.popularity}
+        </td>
+        <td>
+          Action
+        </td>
+
+        <td className>
+        <FontAwesomeIcon icon={faTrash} />
+        </td>
+      </tr>
+      })}
+
+      
 
       </tbody>
       

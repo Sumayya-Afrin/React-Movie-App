@@ -10,8 +10,10 @@ function MovieCard({poster_path ,handleWatchList , watchList, handleFilteredWatc
   const isContain = (movieObj) =>
   {
 
+    // eslint-disable-next-line react/prop-types
     for(let i=0;i<watchList.length;i++)
     {
+      // eslint-disable-next-line react/prop-types
       if(watchList[i].id==movieObj.id)
       {
         return true
