@@ -110,7 +110,7 @@ function WatchList({watchList , setWatchList , handleFilteredWatchList}) {
     </div>
     
     
-    <div  className='overflow-hidden  rounded-lg  border border-gray-200 '>
+    <div  className='overflow-hidden  rounded-lg  border border-gray-200 p-3'>
       <table className='w-full text-center'>
       <thead className='border-b-2'>
         <tr>
@@ -166,7 +166,7 @@ function WatchList({watchList , setWatchList , handleFilteredWatchList}) {
       {
      
        // eslint-disable-next-line react/jsx-key
-       return  <tr>
+       return  <tr className='border border-gray-200'>
         <td className='p-3 flex items-center gap-6' >
           <img src={`https://image.tmdb.org/t/p/original/${movieObj.poster_path}`} alt="movie-poster" className='h-[8rem] w-[6rem]' />
           <div>{movieObj.original_title}</div>
